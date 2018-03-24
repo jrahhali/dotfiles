@@ -1,0 +1,7 @@
+[user]
+	email = plus.jamal@gmail.com
+	name = Jamal Rahhali
+[push]
+	default = simple
+[pull]
+	ff = only
