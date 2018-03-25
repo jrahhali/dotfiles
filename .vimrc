@@ -27,6 +27,7 @@ set showcmd             " Show the command entered at bottom of screen.
 set encoding=utf-8      " The encoding displayed.
 set fileencoding=utf-8  " The encoding written to file.
 set number              " Display line numbers.
+set mouse=a             " Enable mouse support.
 set background=dark
 colorscheme gruvbox
 
