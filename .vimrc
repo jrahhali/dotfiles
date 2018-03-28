@@ -18,41 +18,58 @@ call plug#end()
 " ========================================
 " Editor look and feel.
 " ========================================
-filetype on             " Turn filetype detection on.  Other commands will use the loaded filetype detected by this command.
-filetype plugin on      " For the detected filetype, load that filetype's plugin script.  These are vim options specific to this type of file.
-filetype indent on      " For the detected filetype, load that filetype's indent script.  This is a script to govern indentation rules based on context.
-syntax on               " For the detected filetype, load that filetype's syntax.
-set cursorline          " Highlight the current line the cursor is on.
-set showcmd             " Show the command entered at bottom of screen.
-set encoding=utf-8      " The encoding displayed.
-set fileencoding=utf-8  " The encoding written to file.
-set number              " Display line numbers.
-set mouse=a             " Enable mouse support.
+" Turn filetype detection on.  Other commands will use the loaded filetype detected by this command.
+" For the detected filetype, load that filetype's plugin script.  These are vim options specific to this type of file.
+" For the detected filetype, load that filetype's indent script.  This is a script to govern indentation rules based on context.
+filetype plugin indent on
+" For the detected filetype, load that filetype's syntax.
+syntax on
+" Highlight the current line the cursor is on.
+set cursorline
+" Show the command entered at bottom of screen.
+set showcmd
+" The encoding displayed.
+set encoding=utf-8
+" The encoding written to file.
+set fileencoding=utf-8
+" Display line numbers.
+set number
+" Enable mouse support.
+set mouse=a
 set background=dark
 colorscheme gruvbox
 
 " ========================================
 " Indentation and Formatting
 " ========================================
-set backspace=indent,eol,start " Allow backspacing over everything.
-set autoindent                 " Copy indentation from current line when starting new line.
-set smartindent                " Auto indentiation for c-like languages (blocks, etc).
-set expandtab                  " Use spaces to expand a tab in insert mode.
-set softtabstop=2              " Number of spaces a tab takes up in insert mode.
-set shiftwidth=2               " Number of spaces when a line is shifted in normal mode (>>, <<, ==).
+" Allow backspacing over everything.
+set backspace=indent,eol,start
+" Copy indentation from current line when starting new line.
+set autoindent
+" Auto indentiation for c-like languages (blocks, etc).
+set smartindent
+" Use spaces to expand a tab in insert mode.
+set expandtab
+" Number of spaces a tab takes up in insert mode.
+set softtabstop=2
+" Number of spaces when a line is shifted in normal mode (>>, <<, ==).
+set shiftwidth=2
 
 " ========================================
 " Searching
 " ========================================
-set hlsearch    " Highlight all search results.
-set ignorecase  " Case insensetive search.
-set smartcase   " Case insensetive search except when a capital is involved.
+" Highlight all search results.
+set hlsearch
+" Case insensetive search.
+set ignorecase
+" Case insensetive search except when a capital is involved.
+set smartcase
 
 " ========================================
 " Remappings
 " ========================================
 let mapleader=" "
-inoremap kj <Esc>       
+inoremap kj <Esc>
 
 " ========================================
 " incsearch.vim
@@ -77,6 +94,8 @@ map g# <Plug>(incsearch-nohl-g#)
 if !has('gui_running')
     set t_Co=256
 endif
-set laststatus=2 " Always have a status line.
-set noshowmode   " Don't show current mode on last line (lightline takes over).
+" Always have a status line.
+set laststatus=2
+" Don't show current mode on last line (lightline takes over).
+set noshowmode
 
