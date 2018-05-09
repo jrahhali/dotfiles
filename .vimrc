@@ -2,7 +2,7 @@
 " Plugin Manager
 " ========================================
 
-" Download and install plug.vim automatically.
+" Download and install plug.vim automatically if not installed.
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
@@ -13,13 +13,15 @@ call plug#begin('~/.vim/plugged')
 Plug 'haya14busa/incsearch.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-surround'
+"Plug 'justinmk/vim-sneak'
+"Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 " ========================================
 " Editor look and feel.
-" ========================================
-" Turn filetype detection on.  Other commands will use the loaded filetype detected by this command.
-" For the detected filetype, load that filetype's plugin script.  These are vim options specific to this type of file.
+" For the detected filetype, load that filetype's plugin script.  These are vim options  pecific to this type of file.
 " For the detected filetype, load that filetype's indent script.  This is a script to govern indentation rules based on context.
 filetype plugin indent on
 " For the detected filetype, load that filetype's syntax.
@@ -50,9 +52,7 @@ set autoindent
 set smartindent
 " Use spaces to expand a tab in insert mode.
 set expandtab
-" Number of spaces a tab takes up in insert mode.
-set softtabstop=2
-" Number of spaces when a line is shifted in normal mode (>>, <<, ==).
+" Number of spaces a tab take in normal mode (>>, <<, ==).
 set shiftwidth=2
 
 " ========================================
@@ -99,3 +99,9 @@ set laststatus=2
 " Don't show current mode on last line (lightline takes over).
 set noshowmode
 
+" ========================================
+" CtrlP
+" Fuzzy search.
+" ========================================
+" Show hidden files.
+let g:ctrlp_show_hidden = 1
