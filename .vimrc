@@ -21,6 +21,7 @@ call plug#end()
 
 " ========================================
 " Editor look and feel.
+" ========================================
 " For the detected filetype, load that filetype's plugin script.  These are vim options  pecific to this type of file.
 " For the detected filetype, load that filetype's indent script.  This is a script to govern indentation rules based on context.
 filetype plugin indent on
@@ -71,6 +72,12 @@ set smartcase
 let mapleader=" "
 inoremap kj <Esc>
 
+" Ctrl+C/X and Ctrl+V copy/pasting to and from the clipboard.
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa
+
 " ========================================
 " incsearch.vim
 " Bringing vim search to the 21st century.
@@ -105,3 +112,4 @@ set noshowmode
 " ========================================
 " Show hidden files.
 let g:ctrlp_show_hidden = 1
+
