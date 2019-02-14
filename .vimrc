@@ -62,12 +62,16 @@ set whichwrap+=<,>,h,l,[,],<bs>
 set backspace=indent,eol,start
 " Copy indentation from current line when starting new line.
 set autoindent
+" Some other indent rules for C-like languages.
+set cindent
 " Auto indentiation for c-like languages (blocks, etc).
 set smartindent
-" Use spaces to expand a tab in insert mode.
+" Use spaces to expand a tab character.
 set expandtab
 " Number of spaces a tab take in normal mode (>>, <<, ==).
 set shiftwidth=2
+" How many spaces a tab in insert mode takes up.
+set tabstop=2
 
 " ========================================
 " Searching
@@ -83,23 +87,27 @@ set smartcase
 " Remappings
 " ========================================
 "let mapleader=" "
-"inoremap kj <Esc>
+inoremap kj <Esc>
 " Swap ; and : keys
 nnoremap ; :
 nnoremap : <Nop>
 " Enter in normal mode inserts aine break
-nnoremap <enter> i<enter><esc>
+nnoremap <enter> i<enter>
 " Stop vim from 'moving the cursor backwards' when going from insert mode to
 " normal mode. Here the Esc key is overloaded in Insert mode to additionally run the ``^` 
 " command which moves the cursor to the position where it was the last time 
 " Insert mode was stopped. Since in this mapping it is executed immediately 
 " after leaving Insert mode with Esc, the cursor is left one character to the right as compared to its position with default behavior.
-inoremap <silent> <Esc> <Esc>`^
+"inoremap <silent> <Esc> <Esc>`^
 " Space in normal mode will insert a space
-nnoremap <space> i<space><Esc>l
+nnoremap <space> i<space>
 " Backspace in normal mode will delete a word.
-nnoremap <bs> db
-
+nnoremap <bs> i<bs>
+nnoremap <C-BS> i<C-W>
+" CTRL+<BS> in insert mode deletes previous word
+inoremap <C-BS> <C-W>
+" Tab in normal mode will insert a tab
+nnoremap <tab> i<tab>
 
 " ========================================
 " incsearch.vim
