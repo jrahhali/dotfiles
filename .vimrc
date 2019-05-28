@@ -89,8 +89,8 @@ set smartcase
 "let mapleader=" "
 inoremap kj <Esc>
 " Swap ; and : keys
-nnoremap ; :
-nnoremap : <Nop>
+"nnoremap ; :
+"nnoremap : <Nop>
 " Enter in normal mode inserts aine break
 nnoremap <enter> i<enter>
 " Stop vim from 'moving the cursor backwards' when going from insert mode to
